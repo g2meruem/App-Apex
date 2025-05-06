@@ -1,16 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bloodhound - Apex Legends</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      background: #0f0f0f;
+    }
+
+    header {
+      background-color: #ff004f;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    .main-layout {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    .video-side {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-side video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+
+    .content-side {
+      flex: 2;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .character-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #ff004f88;
+      transition: transform 0.3s ease;
+    }
+
+    .character-img:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      margin-top: 2rem;
+      font-size: 2rem;
+      color: #ff004f;
+    }
+
+    .abilities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .ability {
+      background: #222;
+      border: 1px solid #ff004f;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 0 10px #ff004f33;
+    }
+
+    .ability-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .main-layout {
+        flex-direction: column;
+      }
+      .video-side {
+        max-height: 300px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Bloodhound</h1>
-  <div class="container">
-    <img src="../src/images/bloodhound.jpg" alt="Bloodhound" style="width:300px;border-radius:12px;">
-    <p>Bloodhound es un personaje de Apex Legends. Pronto se añadirá una descripción personalizada.</p>
+  <header>
+    <h1>Bloodhound</h1>
+  </header>
+
+  <div class="main-layout">
+    <!-- Columna del video -->
+    <div class="video-side">
+      <video autoplay muted loop playsinline>
+        <source src="../src/videos/bloodhound-bg.mp4" type="video/mp4" />
+        Tu navegador no soporta videos HTML5.
+      </video>
+    </div>
+
+    <!-- Columna de contenido -->
+    <div class="content-side">
+      <img src="../src/images/bloodhound-2.jpg" alt="bloodhound" class="character-img" />
+
+      <h2>Descripción</h2>
+      <p>Bloodhound es famoso en las Tierras Salvajes por ser uno de les mejores cazadores de La Frontera. Bloodhound era hijo de dos ingenieros destinados a la central industrial Un nuevo amanecer de Talos. Su tío Artur lo adoptó después de que un accidente destruyese las instalaciones y acabase con sus padres. Artur le enseñó las Viejas costumbres, un sistema de creencias que se centra en la gloria de la naturaleza y rechaza la tecnología moderna.</p>
+
+      <h2>Habilidades</h2>
+      <div class="abilities">
+        <div class="ability">
+          <img src="../src/images/bloodhound-skills/tactical.png" alt="Táctica" class="ability-icon" />
+          <h3>Táctica: Ojo omnisciente</h3>
+          <p>Revela brevemente rivales ocultos, trampas y pistas a través de las estructuras frente a ti.</p>
+        </div>
+        <div class="ability">
+          <img src="../src/images/bloodhound-skills/passive.png" alt="Pasiva" class="ability-icon" />
+          <h3>Pasiva: Registro</h3>
+          <p>Verás los rastros dejados por tus enemigos.</p>
+        </div>
+        <div class="ability">
+          <img src="../src/images/bloodhound-skills/ultimate.png" alt="Definitiva" class="ability-icon" />
+          <h3>Definitiva: Bestia cazadora</h3>
+          <p>Agudiza tus sentidos, lo que te permite moverte más rápido y resaltar a tu presa.</p>
+        </div>
+      </div>
+
+      <a href="../index.html" class="back-link">← Volver a la página principal</a>
+    </div>
   </div>
-  <a href="../index.html" style="color: #e60012; display:block; margin-top:20px;">⬅ Volver</a>
 </body>
 </html>
