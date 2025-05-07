@@ -1,16 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fuse - Apex Legends</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      background: #0f0f0f;
+    }
+
+    header {
+      background-color: #ff004f;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    .main-layout {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    .video-side {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-side video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+
+    .content-side {
+      flex: 2;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .character-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #ff004f88;
+      transition: transform 0.3s ease;
+    }
+
+    .character-img:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      margin-top: 2rem;
+      font-size: 2rem;
+      color: #ff004f;
+    }
+
+    .abilities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .ability {
+      background: #222;
+      border: 1px solid #ff004f;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 0 10px #ff004f33;
+    }
+
+    .ability-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .main-layout {
+        flex-direction: column;
+      }
+      .video-side {
+        max-height: 300px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Fuse</h1>
-  <div class="container">
-    <img src="../src/images/fuse.jpg" alt="Fuse" style="width:300px;border-radius:12px;">
-    <p>Fuse es un personaje de Apex Legends. Pronto se añadirá una descripción personalizada.</p>
+  <header>
+    <h1>Fuse</h1>
+  </header>
+
+  <div class="main-layout">
+    <!-- Columna del video -->
+    <div class="video-side">
+      <video autoplay muted loop playsinline>
+        <source src="../src/videos/fuse-bg.mp4" type="video/mp4" />
+        Tu navegador no soporta videos HTML5.
+      </video>
+    </div>
+
+    <!-- Columna de contenido -->
+    <div class="content-side">
+      <img src="../src/images/fuse-2.jpg" alt="fuse" class="character-img" />
+
+      <h2>Descripción</h2>
+      <p>Sin importar si eres hombre o mujer, Fuse es tu hombre, un verdadero equipo demolición de un solo hombre... y lo sabe. Fuse desprende pasión: es un entusiasta de las demoliciones despreocupado que siempre va cargado de explosivos. A Fuse no le falta confianza, pero a menudo le falta un plan. Es un tipo de los que explotan primero y preguntan después, que siempre busca llevarse un beneficio.</p>
+
+      <h2>Habilidades</h2>
+      <div class="abilities">
+        <div class="ability">
+          <img src="../src/images/fuse-skills/tactical.png" alt="Táctica" class="ability-icon" />
+          <h3>Táctica:Bomba de racimo</h3>
+          <p>Lanza una bomba de racimo que libera explosivos aéreos al impactar.</p>
+        </div>
+        <div class="ability">
+          <img src="../src/images/fuse-skills/passive.png" alt="Pasiva" class="ability-icon" />
+          <h3>Pasiva:Granadero</h3>
+          <p>Añade una granada adicional por espacio del inventario. Lanza granadas más lejos, más rápido y con más precisión.</p>
+        </div>
+        <div class="ability">
+          <img src="../src/images/fuse-skills/ultimate.png" alt="Definitiva" class="ability-icon" />
+          <h3>Definitiva:Bombazo</h3>
+          <p>Lanza un bombardeo que rodea una zona objetivo en un muro de fuego.</p>
+        </div>
+      </div>
+
+      <a href="../index.html" class="back-link">← Volver a la página principal</a>
+    </div>
   </div>
-  <a href="../index.html" style="color: #e60012; display:block; margin-top:20px;">⬅ Volver</a>
 </body>
 </html>
